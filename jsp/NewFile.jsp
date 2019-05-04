@@ -13,7 +13,7 @@ try{
 	String data=request.getParameter("data");
     java.sql.Connection con;
     Class.forName("com.mysql.jdbc.Driver");
-    con = DriverManager.getConnection("jdbc:mysql://mysql03/"+"wrk", "root", "123456");
+    con = DriverManager.getConnection("jdbc:mysql://172.17.0.2/"+"wrk", "root", null);
     PreparedStatement ps=con.prepareStatement("insert into inputs(data) values(?)");
     ps.setString(1,data);
     ps.execute();
